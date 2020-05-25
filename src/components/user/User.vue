@@ -17,6 +17,13 @@ export default {
             id: this.$route.params.id
         }
     },
+    watch: {
+        // burası yazılmazsa user1den user2ye tıklandığında link değişse bile 
+        // id değişmez.id yi yenilemek için watchda dinleyip yeni id yi setledik.
+        '$route'(to,from) {
+            this.id = to.params.id;
+        }
+    },
 	methods: {
 		navigateToHome() {
             this.$router.push('/');
