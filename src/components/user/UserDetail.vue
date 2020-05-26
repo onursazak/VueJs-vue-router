@@ -21,6 +21,7 @@ export default {
 		}; 
     },
     beforeRouteEnter(to, from, next) {
+        debugger;
         // bu componentin açılması için her zaman true dönmesi lazım(authentication).
         if(true) {
             next();
