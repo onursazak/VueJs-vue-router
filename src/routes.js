@@ -9,7 +9,12 @@ export const routes = [
     {
         path: '/user/', component: User, children: [
             { path: '', component: UserStart },
-            { path: ':id', component: UserDetail },
+            {
+                path: ':id', component: UserDetail, beforeEnter: (to, from, next) => {
+                    console.log('inside route setup');
+                    next();
+                }
+            },
             { path: ':id/edit', component: UserEdit, name: 'userEdit' }
         ]
     },

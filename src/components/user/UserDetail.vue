@@ -18,7 +18,22 @@ export default {
                 query: { locale: "en", q: 100 },
                 hash: '#data'
             }
-		};
-	},
+		}; 
+    },
+    beforeRouteEnter(to, from, next) {
+        // bu componentin açılması için her zaman true dönmesi lazım(authentication).
+        if(true) {
+            next();
+            //beforeRouteEnter lifecycle ında data prop a ulaşmamız gerekiyorsa
+            // bu şekilde ulaşılır.
+            // next(vm => {
+            //     vm.link
+            // })
+        }
+        else{
+            next(false)
+        }
+
+    }
 };
 </script>
